@@ -1,0 +1,30 @@
+﻿#pragma pack(push, 1)
+
+typedef struct
+{
+  BYTE Padding1[3];
+  BYTE OEM_Name[8];
+
+  // ...
+
+  BYTE ClusterFactor;
+
+} ExFAT_BootRecord;
+
+#pragma pack(pop)
+
+ExFAT_BootRecord *pBootRecord;
+
+// Объявляем буфер для хранения загрузочной записи
+BYTE buffer[1024];
+
+// Считываем данные в буфер
+
+// Инициализируем указатель
+pBootRecord = (ExFAT_BootRecord*)buffer;
+
+// Работаем с данными
+int bytesPerSector = (0x01 << pBootRecord->SectorFactor);
+int sectorsPerCluster = (0x01 << pBootRecord->ClusterFactor);
+int bytesPerCluster = bytesPerSector*sectorsPerCluster;
+// и т. д.

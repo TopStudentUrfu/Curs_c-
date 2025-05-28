@@ -26,9 +26,10 @@
 using namespace std;
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     ifstream file("data.txt"); // Открыть файл для чтения
     if (!file.is_open()) {
-        cerr << "Ошибка открытия файла!" << endl;
+        wcout << L"Ошибка открытия файла!" << endl;
         return 1;
     }
 

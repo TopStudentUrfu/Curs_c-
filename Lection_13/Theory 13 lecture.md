@@ -368,7 +368,7 @@ Fruit <|-- Orange
    - Стрелки `◁|--` обозначают наследование: `Apple`, `Kiwi`, `Orange` являются подклассами `Fruit`.
 
 ---
-
+Оригиналы файлов в: https://github.com/da-khorkov/FruitFactory-2025/tree/master
 
 
 
